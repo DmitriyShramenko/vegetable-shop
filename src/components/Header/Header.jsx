@@ -53,38 +53,3 @@ function Header({ items }) {
 };
 
 export default Header;
-
-
-
-
-
-
-
-
-
-
-// import './header.css';
-// import { Button } from '@mantine/core';
-
-// function Header({ onCartOpen }) {
-
-//    return (
-//       <div className="header-container">
-//          <div className="vegetable-logo">
-//             <span>Vegetable</span>
-//             <span className="shop-logo">SHOP</span>
-//          </div>
-//          <Button
-//             variant="filled"
-//             color="#54B46A"
-//             size="xs"
-//             radius="md"
-//             onClick={onCartOpen}
-//          >
-//             Cart
-//          </Button>
-//       </div >
-//    );
-// };
-
-// export default Header;

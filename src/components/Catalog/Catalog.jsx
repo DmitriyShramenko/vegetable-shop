@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Loader, Grid, Flex } from '@mantine/core';
+import { Loader } from '@mantine/core';
 import './catalog.css';
 import VegetableCard from "../VegetableCard/VegetableCard";
 
@@ -32,11 +32,11 @@ function Catalog({ addToCart }) {
   return (
     <div className="catalog">
       <h1>Catalog</h1>
-      <Grid className="cardList">
+      <div className="cardList">
         {products.map((product) => (
           <VegetableCard key={product.id} product={product} addToCart={addToCart} />
         ))}
-      </Grid>
+      </div>
     </div>
   );
 };

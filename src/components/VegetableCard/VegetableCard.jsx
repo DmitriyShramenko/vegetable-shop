@@ -13,12 +13,16 @@ function VegetableCard({ product, addToCart }) {
 
   return (
     <Card
-      className="product-card"
-      width="xs" padding="lg" radius="lg" >
+      padding="lg"
+      radius="lg"
+      withBorder
+      style={{ height: 414, width: 276 }} >
       <Card.Section className="product-image">
         <Image
           src={product.image}
-          height={220}
+          height={276}
+          width={276}
+          fit="contain"
           alt={product.name}
         />
       </Card.Section>

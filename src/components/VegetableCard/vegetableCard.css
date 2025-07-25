@@ -1,0 +1,15 @@
+.product-card {
+  width: 302px;
+  height: 414px;
+  margin: 28px auto 24px auto;
+}
+
+.product-image {
+  width: 276px;
+  height: 276px;
+  padding: 16px;
+}
+
+.product-name {
+  padding: 16px;
+}

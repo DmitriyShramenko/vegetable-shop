@@ -1,0 +1,31 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 20px;
+}
+
+.vegetable-logo {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 22px;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.shop-logo {
+  background-color: #54B46A;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.cart-btn {
+  padding: 7px;
+}

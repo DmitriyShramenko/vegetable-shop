@@ -1,0 +1,20 @@
+.catalog {
+  background-color: #E9ECEF;
+  padding: 49px 0;
+}
+
+.cardList {
+  gap: 16px;
+  padding: 20px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+h1 {
+  padding-left: 50px;
+}

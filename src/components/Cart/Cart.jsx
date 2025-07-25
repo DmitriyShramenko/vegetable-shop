@@ -1,13 +1,19 @@
-import { useState } from 'react';
 import { Box, Group, Text, Image, Divider, ActionIcon, } from '@mantine/core';
 import { IconMinus, IconPlus } from '@tabler/icons-react';
 
-function Cart({ items, total }) {
+function Cart({ items, total, setCartItems }) {
 
-  const [count, setCount] = useState(1);
+  const increment = (index) => {
+    const updated = [...items];
+    updated[index].qty += 1;
+    setCartItems(updated);
+  };
 
-  const increment = () => setCount((c) => c + 1);
-  const decrement = () => setCount((c) => Math.max(0, c - 1));
+  const decrement = (index) => {
+    const updated = [...items];
+    updated[index].qty = Math.max(0, updated[index].qty - 1);
+    setCartItems(updated);
+  };
 
   return (
 
@@ -33,6 +39,7 @@ function Cart({ items, total }) {
                 variant="light"
                 size="24"
                 color="#495057"
+                onClick={() => decrement(idx)}
               >
                 <IconMinus size={12} color="black" />
               </ActionIcon>
@@ -41,6 +48,7 @@ function Cart({ items, total }) {
                 variant="light"
                 size="24"
                 color="#495057"
+                onClick={() => increment(idx)}
               >
                 <IconPlus size={12} color="black" />
               </ActionIcon>

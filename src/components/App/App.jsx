@@ -11,10 +11,10 @@ function App() {
       const index = items.findIndex(item => item.name === product.name);
       if (index !== -1) {
         const newItems = [...items];
-        newItems[index].qty += 1;
+        newItems[index].qty += product.qty;
         return newItems;
       }
-      return [...items, { ...product, qty: 1 }];
+      return [...items, { ...product, qty: product.qty }];
     });
   }
 
@@ -23,12 +23,18 @@ function App() {
       header={{ height: 60 }}
     >
       <AppShell.Header>
-        <Header items={cartItems} />
+        <Header
+          items={cartItems}
+          setCartItems={setCartItems}
+        />
       </AppShell.Header>
       <AppShell.Main>
-        <Catalog addToCart={addToCart} />
+        <Catalog
+          addToCart={addToCart}
+
+        />
       </AppShell.Main>
-    </AppShell>
+    </AppShell >
   );
 }
 

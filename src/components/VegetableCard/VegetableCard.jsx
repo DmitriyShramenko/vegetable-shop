@@ -9,6 +9,7 @@ function VegetableCard({ product, addToCart }) {
 
   const increment = () => setCount((c) => c + 1);
   const decrement = () => setCount((c) => Math.max(0, c - 1));
+
   const [vegetableName, vegetableWeigh] = product.name.split(' - ')
 
   return (
@@ -80,7 +81,7 @@ function VegetableCard({ product, addToCart }) {
           color="#E7FAEB"
           size="lg"
           radius="md"
-          onClick={() => addToCart(product)}
+          onClick={() => addToCart({ ...product, qty: count })}
         >
           <Text fw={500} c="#3B944E">Add to cart</Text>
         </Button>

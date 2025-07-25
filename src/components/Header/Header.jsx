@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import './header.css';
-import { Popover, Button, Image, Text } from '@mantine/core';
+import { Popover, Button, Text, Image, Group, Box } from '@mantine/core';
 
 import Cart from '../Cart/Cart';
 
-function Header({ items }) {
+function Header({ items, setCartItems }) {
 
    const [opened, setOpened] = useState(false);
 
    const total = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+   const itemCount = items.reduce((sum, item) => sum + item.qty, 0);
 
    return (
 
@@ -32,8 +33,33 @@ function Header({ items }) {
                   variant="filled"
                   color="#54B46A"
                   size="xs"
+                  px="xs"
+                  w={120}
                >
-                  Cart
+                  <Group gap={6} align="center" justify="center" wrap="nowrap">
+                     <Box
+                        style={{
+                           backgroundColor: 'white',
+                           borderRadius: '999px',
+                           width: 15,
+                           height: 15,
+                           display: 'flex',
+                           alignItems: 'center',
+                           justifyContent: 'center',
+                        }}
+                     >
+                        <Text size="xs" fw={500} c="black">{itemCount}</Text>
+                     </Box>
+
+                     <Text size="sm" fw={600} c="white">
+                        Cart
+                     </Text>
+                     <Image
+                        src="../../public/image/cart.svg"
+                        h={15}
+                        w={15}
+                     />
+                  </Group>
                </Button>
             </Popover.Target>
 
@@ -44,7 +70,11 @@ function Header({ items }) {
                      <Text>корзина пуста</Text>
                   </>
                ) : (
-                  <Cart items={items} total={total} />
+                  <Cart
+                     items={items}
+                     total={total}
+                     setCartItems={setCartItems}
+                  />
                )}
             </Popover.Dropdown>
          </Popover>

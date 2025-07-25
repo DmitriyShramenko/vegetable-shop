@@ -34,7 +34,11 @@ function Catalog({ addToCart }) {
       <h1>Catalog</h1>
       <div className="cardList">
         {products.map((product) => (
-          <VegetableCard key={product.id} product={product} addToCart={addToCart} />
+          <VegetableCard
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+          />
         ))}
       </div>
     </div>
